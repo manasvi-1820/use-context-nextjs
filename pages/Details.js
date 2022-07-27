@@ -24,17 +24,21 @@ const Details = () => {
     <div style={{ display: "flex", justifyContent: "center", height: "100vh" }}>
       <div className="text-center">
         <>
-          {demo.length > 0 && (
+          {demo.length > 0 ? (
             <div>
-              <h4>you can refresh page</h4>
+              <h4>You can refresh page</h4>
               <button onClick={ClearStorage}>Clear Order Storage</button>
             </div>
+          ) : (
+            <h4 className="mt-5 text-danger">Local Storage is now null</h4>
           )}
-
-          <h1 className="text-center">LocalStorage with useContext</h1>
           {demo.map((product, index) => {
             return (
               <Col xl={12} lg={12} key={index + "product"}>
+                <h1 className="text-center text-info text-decoration-underline">
+                  LocalStorage with useContext
+                </h1>
+                ;
                 <div
                   className="card h-100 text-center p-4"
                   onClick={() => Click(product)}
