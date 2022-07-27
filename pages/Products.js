@@ -7,19 +7,21 @@ import { useRouter } from "next/router";
 const Products = () => {
   const route = useRouter();
   const { setOrder } = useContext(OrderContext);
+  console.log("setorder", setOrder);
   const [myOrder, setMyOrder] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
       const response = await fetch("https://fakestoreapi.com/products");
-      setMyOrder(await response.clone().json());
+      const responseJson = await response.clone().json();
+      setMyOrder(responseJson);
     };
     getProducts();
   }, []);
 
   const SubmitOrder = (product) => {
-    route.push("/Details");
     setOrder([product]);
+    route.push("/Details");
   };
 
   return (
