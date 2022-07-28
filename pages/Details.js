@@ -27,7 +27,7 @@ const Details = () => {
         <title>Product Details</title>
         <meta name="description" content="About at my store !" />
         <meta property="og:title" content="About Us - My Clothing Store" />
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
       <div
